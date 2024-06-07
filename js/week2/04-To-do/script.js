@@ -14,7 +14,7 @@ taskList.appendChild(taskItem);
 });
 
 taskList.addEventListener("click", function(event) {
-  let result = confirm("Are you sure you want to delete this task?");
+  let result = confirm(`Are you sure you want to delete ${taskList.innerText}?`);
 
   if(result === true){
      if (event.target.tagName.toLowerCase() === "li") {
