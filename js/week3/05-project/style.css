@@ -1,24 +1,25 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    background-color: skyblue;
 }
-
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#weather-form {
+    margin-left: 20px;
 }
-
-input, button {
-    padding: 10px;
-    margin: 5px;
-    width: calc(100% - 22px);
+#weather-data {
+    margin-left: 20px;
 }
-
-#weather-result {
-    margin-top: 20px;
+.loading {
+    display: none;
+    margin-left: 20px;
+}
+button{
+    border-radius: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button:hover{
+    background-color: cadetblue;
+}
+#location{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
