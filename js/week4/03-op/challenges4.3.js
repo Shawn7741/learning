@@ -52,3 +52,5 @@ class Fighter extends Character {
 const fighter = new Fighter("Bruce Lee", 100, 100, "mixed martial arts", 100);
 
 fighter.showAbilities();
+
+// The super keyword is used to access properties on an object literal or class's [[Prototype]], or invoke a superclass's constructor.
