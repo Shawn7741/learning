@@ -1,0 +1,169 @@
+<!-- Here's a step-by-step guide to building the Recipe Book App:
+
+Step 1: Set up the project structure
+
+Create a new project folder and initialize a new Node.js project using npm:
+
+mkdir recipe-book-app
+cd recipe-book-app
+npm init -y
+Create the following folders and files:
+
+recipe-book-app/
+components/
+Home.js
+Recipe.js
+RecipeBook.js
+...
+containers/
+App.js
+...
+actions/
+recipeActions.js
+...
+reducers/
+recipeReducer.js
+...
+store/
+store.js
+...
+index.js
+index.html
+styles/
+global.css
+...
+package.json
+Step 2: Set up the backend API
+
+Create a new file server.js and set up a simple backend API using Express.js:
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use(express.json());
+
+const recipes = [
+  { id: 1, title: 'Recipe 1', image: 'image1.jpg', ingredients: ['ingredient1', 'ingredient2'], instructions: 'instruction1' },
+  { id: 2, title: 'Recipe 2', image: 'image2.jpg', ingredients: ['ingredient3', 'ingredient4'], instructions: 'instruction2' },
+  //...
+];
+
+app.get('/recipes', (req, res) => {
+  res.json(recipes);
+});
+
+app.get('/recipes/:id', (req, res) => {
+  const recipe = recipes.find(recipe => recipe.id === parseInt(req.params.id));
+  if (recipe) {
+    res.json(recipe);
+  } else {
+    res.status(404).json({ error: 'Recipe not found' });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
+Step 3: Implement the frontend
+
+Create a new file index.js and set up the frontend using React:
+
+import React from 'eact';
+import ReactDOM from 'eact-dom';
+import App from './containers/App';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+Create a new file App.js and implement the App component:
+
+import React, { useState, useEffect } from 'eact';
+import Home from './Home';
+import RecipeBook from './RecipeBook';
+
+function App() {
+  const [recipes, setRecipes] = useState([]);
+  const [savedRecipes, setSavedRecipes] = useState([]);
+
+  useEffect(() => {
+    fetch('/recipes')
+     .then(response => response.json())
+     .then(data => setRecipes(data));
+  }, []);
+
+  const handleSaveRecipe = recipe => {
+    setSavedRecipes([...savedRecipes, recipe]);
+  };
+
+  return (
+    <div>
+      <Home recipes={recipes} onSaveRecipe={handleSaveRecipe} />
+      <RecipeBook savedRecipes={savedRecipes} />
+    </div>
+  );
+}
+
+export default App;
+Create a new file Home.js and implement the Home component:
+
+import React from 'eact';
+
+function Home({ recipes, onSaveRecipe }) {
+  return (
+    <div>
+      <h1>Recipe Book App</h1>
+      <input type="search" placeholder="Search for recipes" />
+      <ul>
+        {recipes.map(recipe => (
+          <li key={recipe.id}>
+            <h2>{recipe.title}</h2>
+            <img src={recipe.image} alt={recipe.title} />
+            <p>{recipe.ingredients.join(', ')}</p>
+            <button onClick={() => onSaveRecipe(recipe)}>Save Recipe</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Home;
+Create a new file RecipeBook.js and implement the RecipeBook component:
+
+import React from 'eact';
+
+function RecipeBook({ savedRecipes }) {
+  return (
+    <div>
+      <h1>My Recipe Book</h1>
+      <ul>
+        {savedRecipes.map(recipe => (
+          <li key={recipe.id}>
+            <h2>{recipe.title}</h2>
+            <img src={recipe.image} alt={recipe.title} />
+            <p>{recipe.ingredients.join(', ')}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default RecipeBook;
+Step 4: Implement testing with Jest
+
+Create a new file Home.test.js and implement unit tests for the Home component:
+
+import React from 'eact';
+import { render, fireEvent, waitFor } from '@testing-library/react';
+import Home from './Home';
+
+describe('Home component', () => {
+  it('renders a list of recipes', () => {
+    const recipes = [
+      { id: 1, title: 'Recipe 1', image: 'image1.jpg', ingredients: ['ingredient1', 'ingredient2'] },
+      { id: 2, -->

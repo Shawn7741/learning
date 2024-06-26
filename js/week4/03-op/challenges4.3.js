@@ -4,7 +4,15 @@ class Character {
         this.health = health;
         this.strength = strength;
     }
+
+    attack(target) {
+        console.log(`${this.name} attacks ${target.name} with strength ${this.strength}`);
+
+        target.health -= this.strength;
+        console.log(`${target.name}'s health is now ${target.health}`);
+    }
 }
+
 
 
 class Boxer extends Character {
@@ -28,6 +36,7 @@ class Kid extends Character {
         this.weapon = weapon;
         this.power = power;
     }
+
     showAbilities() {
         console.log(`${this.name} has a health of ${this.health} and his strength is ${this.strength}, he uses his ${this.weapon} and his power is ${this.power}`);
     }
