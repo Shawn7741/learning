@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+#search {
+    padding: 10px;
+    width: 70%;
+    margin-right: 10px;
+}
+
+#searchBtn {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.recipe {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.recipe h2 {
+    margin: 10px 0;
+}
+
+.recipe p {
+    color: #555;
+}

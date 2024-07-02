@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
-import Garage from './Counter.jsx'
+import App from './calculator.jsx'
+// import Packagelist from './Package.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Garage />
+    <App/>
   </React.StrictMode>,
 )
