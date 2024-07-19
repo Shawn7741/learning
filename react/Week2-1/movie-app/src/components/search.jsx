@@ -15,7 +15,7 @@ const Search = ({setMovies}) => {
     return (
         <form onSubmit={searchMovies} className="flex justify-center mt-4">
             <input type="text" value={query} onChange={(e) =>setQuery(e.target.value)} placeholder="Search movie..." className="p-2 border-gray-300 rounded-md" />
-            <button type="submit" className="ml-2 p-2 bg-cyan-500 text-white rounded-md">Search</button>
+            <button type="submit" className="ml-2 p-2 bg-red-500 text-white rounded-md">Search</button>
         </form>
     );
 };
