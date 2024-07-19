@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import Search from "./components/search";
 import MovieDetail from "./components/MovieDetail";
@@ -12,6 +12,7 @@ const App = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   return (
+    
     <FavouritesProvider>
     <Router>
       <div className="container mx-auto"><Search setMovies={setMovies} />

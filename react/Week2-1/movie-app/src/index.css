@@ -2,17 +2,26 @@
 @tailwind components;
 @tailwind utilities;
  
-
-body {
-  background-color:gray;
+#root {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
   
 }
+body {
+  background-color: burlywood;
+
+}
+
+
 .movie-poster {
-  max-height: 300px;
+  max-height: 100px;
   object-fit: cover;
 }
 
-.movie-poster:hover {
-  max-height: 300px;
-  object-fit: cover;
-}
+
+
+
+
+
