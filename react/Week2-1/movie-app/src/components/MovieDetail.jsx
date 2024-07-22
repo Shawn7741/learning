@@ -1,18 +1,17 @@
 import {useState, useEffect} from "react";
-import axios from 'axios';
 import { useParams } from "react-router-dom";
 import { useFavourites } from "./FavouriteContext";
 
-const MovieDetail = () => {
+const MovieDetail = ({ selectedMovie }) => {
     const [movie, setMovie] = useState(null);
     const { id } = useParams();
     const { addFavourite } = useFavourites();
 
     useEffect(() => {
         const fetchMovie = async () => {
-            const response = await axios.get(`http://www.omdbapi.com/?i=${id}&apikey=c03b81b1`);
-            setMovie(response.data);
-            console.log(response.data);
+            const response = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=c03b81b1`);
+            const data = await response.json();
+            setMovie(data);
         };
         fetchMovie();
     }, [id]);
@@ -25,7 +24,6 @@ const MovieDetail = () => {
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{movie.Title}</div>
                 <p className="text-gray-700 text-base">{movie.Plot}</p>
-                <p className="text-gray-700 text-base">{movie.Actors}</p><br />
                 <p><b>Year: </b><span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{movie.Year}</span></p>
                 <p><b>Category: </b><span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{movie.Type}</span></p>
                 <p><b>Cast: </b><span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{movie.Actors}</span></p>            
