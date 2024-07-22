@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './Management.jsx'
 // import Packagelist from './Package.jsx'
-import './App.css'
+import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -35,3 +35,22 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 //     </BrowserRouter>
 //   </React.StrictMode>,
 // )
+
+
+//main.jsx
+// import React from 'react'
+// import ReactDOM from 'react-dom/client'
+// import App from './Counter'
+// import { Provider } from 'react-redux';
+// import store from './Redux';
+// // //import RickyAndMorty from './Hook'
+// // import {BrowserRouter} from 'react-router-dom'//react-router-dom import
+// //import './index.css'
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <Provider store={store}>
+//          <App />
+//     </Provider>
+//   </React.StrictMode>,
+)
+

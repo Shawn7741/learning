@@ -1,0 +1,9 @@
+#root{
+    text-align: center;
+    display: flexbox;
+    background-color: bisque;
+}
+.root:header{
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
