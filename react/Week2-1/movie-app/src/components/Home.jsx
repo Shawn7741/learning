@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 
@@ -29,21 +28,40 @@ const movies = [
         image: "https://m.media-amazon.com/images/M/MV5BMTg0NDMyMzEzOF5BMl5BanBnXkFtZTgwNTIzODQxMjI@._V1_SX300.jpg",
         imdbID: "tt3281796"
     },
-  
+    {
+        name: "Money Heist",
+        image: "https://m.media-amazon.com/images/M/MV5BODI0ZTljYTMtODQ1NC00NmI0LTk1YWUtN2FlNDM1MDExMDlhXkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_SX300.jpg",
+        imdbID: "tt6468322"
+    },
+    {
+        name: "Breaking Bad",
+        image: "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_SX300.jpg",
+        imdbID: "tt0903747"
+    },
+    {
+        name: "Jumanji: Welcome to the Jungle",
+        image: "https://m.media-amazon.com/images/M/MV5BODQ0NDhjYWItYTMxZi00NTk2LWIzNDEtOWZiYWYxZjc2MTgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+        imdbID: "tt2283362"
+    },
 ]
 
-const Home = ({ movies, setSelectedMovie}) => {
+const Home = () => {
     return (
-        <div className="grid grid-cols-4 gap-4">{movies.map((movie) => (
-            <Link to={`/movie/${movie.imdbID}`} key={movie.imdbID} onClick={() => setSelectedMovie(movie.imdbID)}
-            className="relative group cursor-pointer border p-4">
-                <img src={movie.Poster} alt={`${movie.Title}poster`} className="w-full transition-transform duration-300 transform group-hover::scale-105" />
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                    <h2 className="text-white text-center">{movie.Title}</h2>
+        <div className="grid grid-cols-4 gap-4">
+            {movies.map((movie, index) => (
+                <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg shadow-cyan-700/100 bg-white">
+                    <Link to={`/movie/${movie.imdbID}`} key={movie.imdbID} onClick={() => setSelectedMovie(movie.imdbID)}>
+                    <img className="w-full" src={movie.image} alt={`${movie.name}`}  />
+                    <div className="px-6 py-4">
+                            <div className="font-bold text-xl mb-2">{movie.name}</div>
+                    </div>
+                    </Link>
                 </div>
-            </Link>
-        ))}
-       </div>
+
+            ))}
+            
+        </div>
+        
     );
 };
 
