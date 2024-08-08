@@ -25,8 +25,9 @@ const App = () => {
         </nav>
         <Search setMovies={setMovies} />
       <Routes>
-        <Route path="/" element={<Home movies={[]} setSelectedMovie={selectedMovie} /> }
+        <Route path="/" element={<Home  /> }
         />
+        
         <Route path="/favourites" element={<Favourites />}
         />
         <Route path="/search-results" element={<SearchResults movies={movies} setSelectedMovie={selectedMovie} />}
