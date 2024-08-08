@@ -1,0 +1,10 @@
+{
+    "name": "Shawn",
+    "age": 21,
+    "is_dating": false,
+    "hobbies": [
+        "Kayaking",
+        "Football"
+    ]
+    
+}

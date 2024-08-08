@@ -1,0 +1,25 @@
+<?xml version="1.0", encoding="UTF-8" ?>
+<library>
+<book>
+<title>Blossoms of the savannah</title>
+<author>H.R. Ole Kulet</author>
+<year>2008</year>
+<price>600</price>
+</book>
+<book>
+<title>Chozi la Heri</title>
+<author>Assumpta K. Matei</author>
+<year>2014</year>
+<price>600</price>
+</book>
+</library>
+
+<?xml version="1.0", encoding="UTF-8" ?>
+<movie>
+<title>Avengers: Infinity War</title>
+<producer>Kevin Feige</producer>
+<director>Anthony Russo</director>
+<year>2018</year>
+<country>United States</country>
+<budget>400 million</budget>
+</movie>
