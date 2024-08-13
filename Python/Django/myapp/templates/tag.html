@@ -1,0 +1,29 @@
+{% comment %}======================= TAGS======================= {% endcomment %}
+
+{% if user.authenticated %}
+    
+Welcome, {{user.username}}
+
+{% else %}
+
+Please login
+
+{% endif %}
+
+{% comment %} looping {% endcomment %}
+
+<ul>
+
+    {% for item in user.items %}
+    
+    <li> {{item}}</li>
+    
+    {% endfor %}
+</ul>
+{% comment %} ================ FILTERS======================= {% endcomment %}
+
+{% comment %} Conerts username to uppercase {% endcomment %}
+
+{{ user.username|upper}} 
+
+{{ my_date|date: "F j, Y"}}
