@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %} Shawn's site {% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div class="container">
+        {% block content %}
+        <h1>Hello Shawn</h1>
+        {% endblock %}
+    </div>
+</body>
+</html>
