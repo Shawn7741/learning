@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tempapp',#add your app here
+    'tempapp',
 ]
 
 MIDDLEWARE = [
