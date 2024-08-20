@@ -43,3 +43,14 @@ INSERT INTO books(id, title, description, price, publication_date, author_id) VA
 (4, '1984', 'It tells the story of Winston Smith, a citizen of the miserable society of Oceania, who is trying to rebel against the Party and its omnipresent symbol, Big Brother', 1660.00, '1949-06-08', 4),
 (5, 'Jane Eyre', 'A gothic masterpiece of tempestuous passions and dark secrets', 1500.00, '1847-10-19', 5),
 (6, 'Wuthering Heights', 'The narrative centres on the all-encompassing, passionate, but ultimately doomed love between Catherine Earnshaw and Heathcliff, and how this unresolved passion eventually destroys them and the people around them', 2000.00, '1847-12-12', 6);
+
+
+USE bookstore;
+
+INSERT INTO orders(id, customer_id, book_id, quantity, order_date) VALUES
+(1, 1, 2, 2, '2024-08-20'),
+(2, 3, 4, 1, '2024-07-16'),
+(3, 2, 1, 4, '2024-06-28'),
+(4, 6, 5, 6, '2024-08-17'),
+(5, 4, 3, 1, '2024-09-09'),
+(6, 5, 6, 5, '2024-08-12');
