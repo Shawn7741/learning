@@ -16,7 +16,8 @@
 <div class="flex-box">
     {% for blog in blogs %}
         <h2 class="text-xl font-bold mb-2 text-cyan-900">{{ blog.title }}</h2>
-        <p class="text-teal-900 mb-4">{{ blog.content }}</p>
+        <img src="{{blog.image.url}}" alt="Blog Image" class="image" width="300"></a>
+        <p class="text-teal-900 mb-4">{{ blog.content }}<br></p>
         <p class="text-sm text-slate-950">Is Published: {{ blog.is_published }}</p>
         <p class="text-sm text-slate-950">By {{ blog.author }} on {{ blog.date_posted }}</p>
         <p class="text-sm text-slate-950">Last Updated {{ blog.date_posted }}</p>

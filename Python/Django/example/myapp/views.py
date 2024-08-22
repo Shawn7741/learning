@@ -24,9 +24,10 @@ def subscriber(request):
     return render(request, 'subscribe.html')
 def add_blog(request):
     if request.method == 'POST':
-        form = BlogForm(request.POST)
+        form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
-            blog = form.save()
+            blog = form.save(commit=False)
+            blog.save()
             return redirect('Blog')
     else:
         form = BlogForm()

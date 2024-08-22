@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from .models import Blog
+
 class BlogForm(forms.ModelForm):
     author = forms.ModelChoiceField(
         queryset=User.objects.all(),
@@ -8,7 +9,7 @@ class BlogForm(forms.ModelForm):
     )
     class Meta:
         model = Blog
-        fields = ['author', 'title', 'content', 'is_published']
+        fields = ['author', 'title', 'image', 'content', 'is_published']
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['author'].queryset = User.objects.all()
