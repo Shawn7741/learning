@@ -3,14 +3,18 @@ from .models import Blog
 from .models import Subscriber
 from django.contrib import messages
 from .forms import BlogForm
+
 def index(request):
     return render(request, 'index.html')
+
 def about(request):
     return render(request, 'about.html')
+
 def blog_list(request):
     blogs = Blog.objects.all()
     context = {'blogs': blogs}
     return render(request, 'blog.html', context)
+
 def subscriber(request):
     if request.method == 'POST':
         email = request.POST['email']
@@ -22,6 +26,7 @@ def subscriber(request):
             messages.success(request, 'Thank you for subscribing!')
             return redirect('subscribe')
     return render(request, 'subscribe.html')
+
 def add_blog(request):
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
@@ -32,3 +37,6 @@ def add_blog(request):
     else:
         form = BlogForm()
     return render(request, 'add_blog.html', {'form': form})
+
+def error_404(request, exception):
+    return render(request, '404.html')

@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Reset Calorie Count</h1>
+  <p>Are you sure you want to reset the calorie count for the day?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Reset</button>
+  </form>
+{% endblock %}

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 import cloudinary
 import cloudinary.uploader
@@ -24,13 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hx$x=q%cdg$2(54@08m^)q*t5$$zp7v@qrv_+pwz#-fukd!^m5'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ '*' ]
+LOGIN_REDIRECT_URL = '/'
 
 # Application definition
 
@@ -45,7 +47,7 @@ INSTALLED_APPS = [
     'cloudinary',
 ]
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,16 +63,15 @@ ROOT_URLCONF = 'example.urls'
 
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.postgresql',
-        'NAME':'myapp',
-        'USER':'postgres',
-        'PASSWORD':'Shawn7741',
-        'HOST':'localhost',
-        'PORT':'5432'
+        'ENGINE': config('DATABASE_ENGINE'),
+        'NAME':config('DATABASE_NAME'),
+        'USER':config('DATABASE_USER'),
+        'PASSWORD':config('DATABASE_PASSWORD'),
+        'HOST':config('DATABASE_HOST'),
+        'PORT':config('DATABASE_PORT'),
     }
     
 }
-
 
 
 TEMPLATES = [
@@ -92,9 +93,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'example.wsgi.application'
 
 cloudinary.config(
-    cloud_name = 'dwev1tq8u',
-    api_key = '496919896526963',
-    api_secret = '7xan2FHYzZe36jBgTPt8jzDaPog'
+    cloud_name = config('CLOUDINARY_CLOUD_NAME'),
+    api_key = config('CLOUDINARY_API_KEY'),
+    api_secret = config('CLOUDINARY_API_SECRET')
 )
 
 
@@ -154,3 +155,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

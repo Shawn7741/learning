@@ -8,6 +8,7 @@ urlpatterns = [
     path('add_blog/', views.add_blog, name='add_blog'),
 ]
 
+# updated urls.py
 
 
 

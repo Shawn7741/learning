@@ -1,0 +1,2 @@
+Django has authentication use,user model,
+middleware is used to separate roles ie; admin and user
