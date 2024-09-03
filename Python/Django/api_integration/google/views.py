@@ -9,6 +9,8 @@ from rest_framework.response import Response
 import requests
 from drf_yasg.utils import swagger_auto_schema
 import os
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
 def fetch_address_details(address):
     base_url = 'https://maps.googleapis.com/maps/api/geocode/json'
     api_key = os.getenv('GOOGLE_API_KEY')

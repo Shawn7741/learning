@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Food Items</h1>
+  <ul>
+    {% for item in food_items %}
+      <li>{{ item.name }}: {{ item.calories }} calories 
+          <a href="{% url 'edit_food' item.pk %}">Edit</a> 
+          <a href="{% url 'delete_food' item.pk %}">Delete</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <h2>Total Calories: {{ total_calories }}</h2>
+  <a href="{% url 'add_food' %}">Add Food Item</a> |
+  <a href="{% url 'reset_calorie' %}">Reset Calorie Count</a>
+{% endblock %}

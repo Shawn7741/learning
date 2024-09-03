@@ -55,7 +55,7 @@ ROOT_URLCONF = 'myproject.urls'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql',
-        'NAME':'myapp',
+        'NAME':'calorie_counter',
         'USER':'postgres',
         'PASSWORD':'Shawn7741',
         'HOST':'localhost',
